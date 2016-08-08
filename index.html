@@ -1,49 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <title>jStruthers</title>
-  </head>
+---
+layout: default
+---
 
-  <body>
-  
-    <header>
-      <h1>
-        Jackson Struthers
-      </h1>
+<div class="home">
 
-      <nav>
-        <span>Blog</span>
-        <span class="hyphen">-</span>
-        <span>Projects</span>
-        <span class="hyphen">-</span>
-        <span>About <span>&</span> Contact</span>
-      </nav>
-    </header>
+  <h1 class="page-heading">Posts</h1>
 
-    <main>
-      <div id="projects">
-        <div class="row center">
-          <div id="p1" class="project column center">
-            <p class="row center">
-              Project 1!
-            </p>
-          </div>
-        </div>
-        <div class="row center">
-          <div id="p2" class="project column center">
-            <p class="row center">
-              Project 2!
-            </p>
-          </div>
-          <div id="p3" class="project column center">
-            <p class="row center">
-              Project 3!
-            </p>
-          </div>
-        </div>
-      </div>
-    </main>
-  
-  </body>
-</html>
+  <ul class="post-list">
+    {% for post in site.posts %}
+      <li>
+        <span class="post-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+
+        <h2>
+          <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+        </h2>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
+
+</div>
