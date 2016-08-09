@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+
+    {% include header.html %}
+    
+    <div class="page-content">
+      <div id="projects">
+        {% for project in site.projects %}
+          <div id="{{ project.title }}" class="project">
+            <div class="flex-center">
+              <a href="{{ project.projectUrl }}">
+                <h1>{{ project.title }}</h1>
+              </a>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+
+    {% include footer.html %}
+    <script>
+      
+      window.onresize = function (event) {
+        var el = document.getElementById('projects'),
+            arrowL = document.getElementById('arrowLeft'),
+            arrowR = document.getElementById('arrowRight'),
+            overflowing = el.scrollWidth > el.clientWidth,
+            scrolledRight = el.scrollWidth - el.scrollLeft === el.clientWidth;
+        
+        if (overflowing && !scrolledRight) {
+          // show arrowL && arrowR
+        }
+      }
+    </script>
+  </body>
+
+</html>
