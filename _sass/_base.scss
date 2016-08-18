@@ -26,7 +26,10 @@ body {
     font-kerning: normal;
 }
 
-
+h1:hover, h2:hover, h3:hover, h4:hover, h5:hover, h6:hover,
+p:hover, blockquote:hover, pre:hover, li:hover {
+  cursor: default;
+}
 
 /**
  * Set `margin-bottom` to maintain vertical rhythm

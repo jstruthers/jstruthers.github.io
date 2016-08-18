@@ -12,6 +12,7 @@ github_username:  jstruthers
 # Collections
 collections:
 - projects
+- case-studies
 
 # Build settings
 markdown: kramdown

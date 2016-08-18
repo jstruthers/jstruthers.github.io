@@ -1,4 +1,27 @@
 /**
+ * Flex Classes
+ */
+.row {
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.center {
+  justify-content: center;
+}
+
+.space {
+  justify-content: space-around;
+}
+
+
+/**
  * Site header
  */
 .site-header {

@@ -1,7 +1,7 @@
 ---
-layout: post
+layout: case_study
 title:  "Chat App Case Study"
-date:   2016-08-12 07:00:00 +0200
+permalink: /case_studies/blocChat
 categories: case study
 ---
 
