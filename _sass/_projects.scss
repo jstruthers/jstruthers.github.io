@@ -1,19 +1,128 @@
+.projects-page {
+  background-color: white;
+}
+
+.projects-page h1, .projects-page h2, .projects-page h3, .projects-page h4 {
+  font-family: "Amatic SC", Avenir, sans-serif;
+  letter-spacing: 3px;
+}
+
 #projects {
   white-space: nowrap;
-  height: 300px;
+  width: 100%;
+  height: 320px;
+  margin-top: 10px;
   padding: 20px 0;
   overflow-x: scroll;
 }
 
-.project {
+.project-view {
+  height: 0;
+  width: 100%;
+  background-color: ghostwhite;
+  overflow: hidden;
+  transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out;
+}
+
+.logo {
+  width: 45%;
+  padding: 20px;
+}
+
+.blurb {
+  width: 45%;
+  padding: 20px;
+}
+
+.show-project {
+  height: 340px;
+  background-color: ghostwhite;
+}
+
+.hide-project {
+  height: 0;
+  background-color: #ccc;
+}
+
+.project-menu-icon {
   display: inline-block;
   vertical-align: top;
   width: 250px;
   height: 250px;
   margin: 0 10px;
   
-  border: 30px solid wheat;
+  border: 30px solid tomato;
   border-radius: 50%;
+  transition: border-color 0.25s ease-in-out
+}
+
+.project-menu-icon:hover, .project-menu-icon h1:hover {
+  cursor: pointer;
+  border-color: steelblue;
+}
+
+/******************
+    blocChat
+******************/
+
+#blocChatMenuIcon {
+  border: 30px solid rebeccapurple;
+}
+
+#blocChatMenuIcon:hover {
+  border: 30px solid cyan; 
+}
+
+#blocChatMenuIcon.selected-project {
+  background-color: cyan;
+}
+
+/******************
+    blocJams
+******************/
+
+#blocJamsMenuIcon {
+  border: 30px solid #333;
+}
+
+#blocJamsMenuIcon:hover {
+  border: 30px solid deeppink; 
+}
+
+#blocJamsMenuIcon.selected-project {
+  background-color: deeppink;
+}
+
+/******************
+    blocPong
+******************/
+
+#blocPongMenuIcon {
+  border: 30px solid turquoise;
+}
+
+#blocPongMenuIcon:hover {
+  border: 30px solid lightcyan; 
+}
+
+#blocPongMenuIcon.selected-project {
+  background-color: lightcyan;
+}
+
+/******************
+    blocTime
+******************/
+
+#blocTimeMenuIcon {
+  border: 30px solid midnightblue;
+}
+
+#blocTimeMenuIcon:hover {
+  border: 30px solid gold; 
+}
+
+#blocTimeMenuIcon.selected-project {
+  background-color: gold;
 }
 
 .flex-center {
@@ -21,16 +130,4 @@
   height: 100%;
   justify-content: center;
   align-items: center;
-}
-
-#blocTime {
-  border-color: tomato;
-}
-
-#blocPong {
-  border-color: midnightblue;
-}
-
-#blocChat {
-  border-color: yellow;
 }
