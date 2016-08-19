@@ -7,7 +7,19 @@ email: jacksonstruthers@gmail.com
 description: Web Design Portfolio 2016
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://jstruthers.github.io" # the base hostname & protocol for your site
-github_username:  jstruthers
+
+github:  jstruthers
+linkedin: https://no.linkedin.com/in/jackson-struthers
+stack_exchange: http://stackexchange.com/users/8887101/jackson-struthers
+codepen: https://codepen.io/jStruthers/
+
+google_fonts: "https://fonts.googleapis.com/css?family=Amatic+SC:400,700"
+font_awesome: "https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"
+
+# Scripts
+google_analytics: "UA-82839520-1"
+disqus_shortname:
+katex: # enable if using math markup
 
 # Collections
 collections:

@@ -2,33 +2,60 @@
 
   <div class="wrapper">
 
-    <h2 class="footer-heading">{{ site.title }}</h2>
-
     <div class="footer-col-wrapper">
-      <div class="footer-col footer-col-1">
+      <div class="row center">
+
+        <h2 class="footer-heading">{{ site.title }}</h2>
+
+        <ul class="social-media-list row">
+          {% if site.github %}
+          <li>
+            <a href="{{ site.github }}"></a>
+            <span class="fa fa-github"></span>
+          </li>
+          {% endif %}
+
+          {% if site.linkedin %}
+          <li>
+            <a href="{{ site.linkedin }}"></a>
+            <span class="fa fa-linkedin"></span>
+          </li>
+          {% endif %}
+
+          {% if site.stack_exchange %}
+          <li>
+            <a href="{{ site.stack_exchange }}"></a>
+            <span class="fa fa-stack-overflow"></span>
+          </li>
+          {% endif %}
+
+          {% if site.twitter %}
+          <li>
+            <a href="{{ site.twitter }}"></a>
+            <span class="fa fa-twitter"></span>
+          </li>
+          {% endif %}
+
+          {% if site.codepen %}
+          <li>
+            <a href="{{ site.codepen }}"></a>
+            <span class="fa fa-codepen"></span>
+          </li>
+          {% endif %}
+        </ul>
+
+      </div>
+
+      <div class="row center">
+
+        <div class="site-description">
+          <p>{{ site.description }}</p>
+        </div>
+
         <ul class="contact-list">
           <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
         </ul>
-      </div>
 
-      <div class="footer-col footer-col-2">
-        <ul class="social-media-list">
-          {% if site.github_username %}
-          <li>
-            {% include icon-github.html username=site.github_username %}
-          </li>
-          {% endif %}
-
-          {% if site.twitter_username %}
-          <li>
-            {% include icon-twitter.html username=site.twitter_username %}
-          </li>
-          {% endif %}
-        </ul>
-      </div>
-
-      <div class="footer-col footer-col-3">
-        <p>{{ site.description }}</p>
       </div>
     </div>
 
