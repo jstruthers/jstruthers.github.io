@@ -25,7 +25,6 @@
  * Site header
  */
 .site-header {
-    border-top: 5px solid $grey-color-dark;
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
 
@@ -74,7 +73,7 @@
         position: absolute;
         top: 9px;
         right: $spacing-unit / 2;
-        background-color: $background-color-1;
+        background-color: $color-1;
         border: 1px solid $grey-color-light;
         border-radius: 5px;
         text-align: right;
@@ -142,6 +141,28 @@
     margin-left: 0;
 }
 
+.site-footer .footer-col-4 {
+  position: relative;
+  top: -1rem;
+}
+
+.site-description {
+  margin-right: 20px;
+}
+
+.social-media-list {
+  align-items: center;
+  font-size: 2rem;
+}
+
+.social-media-list li {
+  margin-left: 25px;
+}
+
+.social-media-list li:hover {
+  cursor: pointer;
+}
+
 .footer-col-wrapper {
     font-size: 15px;
     color: $grey-color;
@@ -198,7 +219,7 @@
  */
 .page-content {
     padding: $spacing-unit 0;
-    background-color: $background-color-2;
+    background-color: $color-2;
 }
 
 .page-content h1, .page-content h2 {

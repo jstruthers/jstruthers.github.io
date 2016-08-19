@@ -1,5 +1,5 @@
 .projects-page {
-  background-color: white;
+  background-color: $color-2;
 }
 
 .projects-page h1, .projects-page h2, .projects-page h3, .projects-page h4 {
@@ -9,28 +9,31 @@
 
 #projects {
   white-space: nowrap;
+  background-color: $color-2;
   width: 100%;
   height: 320px;
-  margin-top: 10px;
   padding: 20px 0;
   overflow-x: scroll;
 }
 
+#projectDetails {
+  width: 100vw;
+}
+
 .project-view {
+  position: relative;
+  left: -10%;
   height: 0;
-  width: 100%;
+  width: 110%;
+  box-shadow: 10px 0px 60px -20px black inset;
   background-color: ghostwhite;
   overflow: hidden;
   transition: height 0.5s ease-in-out, background-color 0.5s ease-in-out;
 }
 
-.logo {
-  width: 45%;
-  padding: 20px;
-}
-
-.blurb {
-  width: 45%;
+.logo, .blurb {
+  width: 500px;
+  margin-left: 200px;
   padding: 20px;
 }
 
@@ -77,6 +80,11 @@
   background-color: cyan;
 }
 
+#blocChatView {
+  background-color: rebeccapurple;
+  color: $color-2;
+}
+
 /******************
     blocJams
 ******************/
@@ -93,6 +101,11 @@
   background-color: deeppink;
 }
 
+#blocJamsView {
+  background-color: #333;
+  color: $color-2;
+}
+
 /******************
     blocPong
 ******************/
@@ -102,11 +115,15 @@
 }
 
 #blocPongMenuIcon:hover {
-  border: 30px solid lightcyan; 
+  border: 30px solid steelblue; 
 }
 
 #blocPongMenuIcon.selected-project {
-  background-color: lightcyan;
+  background-color: steelblue;
+}
+
+#blocPongView {
+  background-color: turquoise;
 }
 
 /******************
@@ -114,15 +131,19 @@
 ******************/
 
 #blocTimeMenuIcon {
-  border: 30px solid midnightblue;
+  border: 30px solid forestgreen;
 }
 
 #blocTimeMenuIcon:hover {
-  border: 30px solid gold; 
+  border: 30px solid tomato; 
 }
 
 #blocTimeMenuIcon.selected-project {
-  background-color: gold;
+  background-color: tomato;
+}
+
+#blocTimeView {
+  background-color: tomato;
 }
 
 .flex-center {
