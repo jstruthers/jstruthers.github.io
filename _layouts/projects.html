@@ -8,15 +8,17 @@
     {% include header.html %}
     
     <div class="projects-page">
+
+      <div id="shadowTop"></div>
       <div id="projectDetails">
         {% for project in site.projects %}
           <div id="{{ project.title }}View" class="project-view row">
 
-            <div class="logo col center">
+            <div class="logo col">
               <img src="{{ site.baseurl }}/../../assets/{{ project.imgUrl }}" alt={{ project.imgAlt }} />
             </div>
 
-            <div class="blurb col center">
+            <div class="blurb col">
               <h1>{{ project.title }}</h1>
               <p>{{ project.blurb }}</p>
               <p>You can view a case study of this project 
@@ -27,11 +29,13 @@
           </div>
         {% endfor %}
       </div>
+      <div id="shadowBot"></div>
+
       <div id="projects">
         {% for project in site.projects %}
           <div id="{{ project.title }}MenuIcon"
                class="project-menu-icon"
-               onClick="showProject('{{ project.title }}')">
+               onClick="showProject('{{ project.projNum }}')">
             <div class="flex-center">
               <h1>{{ project.title }}</h1>
             </div>
@@ -41,38 +45,27 @@
     </div>
 
     {% include footer.html %}
+
     <script>
-      
-      function showProject(title) {
-        var projectTitles = [].slice.call(document.getElementById('projectDetails').children)
-          .map(function(project) {
-            return project.getAttribute('id').slice(0, -4)
-          })
+      function showProject(index) {
+        index = parseInt(index)
+        var details = document.getElementById('projectDetails')
         
-        projectTitles.forEach(function(projectTitle) {
-          console.log('proj title', projectTitle, 'title arg', title)
-          if (projectTitle === title) {
-            document.getElementById(projectTitle + 'View').classList.remove('hide-project')
-            document.getElementById(projectTitle + 'View').classList.add('show-project')
-            document.getElementById(projectTitle + 'MenuIcon').classList.add('selected-project')
-          } else {
-            document.getElementById(projectTitle + 'View').classList.remove('show-project')
-            document.getElementById(projectTitle + 'View').classList.add('hide-project')
-            document.getElementById(projectTitle + 'MenuIcon').classList.remove('selected-project')
-          }
-        })
+        details.style.height = 340 * (index + 1) + 'px'
+        details.style.top = -340 * index + 56 + 'px'
       }
       
-      window.onresize = function (event) {
-        var arrowL = document.getElementById('arrowLeft'),
-            arrowR = document.getElementById('arrowRight'),
-            overflowing = _projects.scrollWidth > _projects.clientWidth,
-            scrolledRight = _projects.scrollWidth - _projects.scrollLeft === _projects.clientWidth;
-        
-        if (overflowing && !scrolledRight) {
-          // show arrowL && arrowR
-        }
-      }
+//      window.onresize = function (event) {
+//        var projects = document.getElementById('projects'),
+//            arrowL = document.getElementById('arrowLeft'),
+//            arrowR = document.getElementById('arrowRight'),
+//            overflowing = _projects.scrollWidth > _projects.clientWidth,
+//            scrolledRight = _projects.scrollWidth - _projects.scrollLeft === _projects.clientWidth;
+//        
+//        if (overflowing && !scrolledRight) {
+//          // show arrowL && arrowR
+//        }
+//      }
     </script>
   </body>
 

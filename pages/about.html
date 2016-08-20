@@ -1,17 +1,53 @@
 ---
 layout: default
-title: About
+title: About & Contact
 permalink: /about/
 ---
 
-<div id="about">
-  <h1>About Me</h1>
-  <img id="headShot" src="../assets/head_shot.jpg" alt="A picture of my face" />
-  <p>
-    Want to continue to learn by creating. Love the discipline and focus required for long-term projects.
-    Solid understanding of and ability with <b>React</b>, <b>Redux</b>, <b>Meteor</b>, <b>HTML 5</b>, and <b>ECMA Script 6</b>.
-    Recently completed an intensive Front End Development boot camp with Bloc.
-    Looking for a position where I can work alongside ambitious and driven people. One of the things I like most about the web design community
-    is how it embraces and encourages mentorship, collaboration, and the open sharing of ideas.
-  </p>  
+<div id="bio"
+     class="row">
+  <div id="about"
+       class="col">
+    <p>
+      <img id="headShot" src="../assets/head_shot.jpg" alt="A picture of my face" />
+      Want to continue to learn by creating. Love the discipline and focus required for long-term projects.
+      Solid understanding of and ability with <b>React</b>, <b>Redux</b>, <b>Meteor</b>, <b>HTML 5</b>, and <b>ECMA Script 6</b>.
+      Recently completed an intensive Front End Development boot camp with Bloc.
+      Looking for a position where I can work alongside ambitious and driven people. One of the things I like most about the web design community
+      is how it embraces and encourages mentorship, collaboration, and the open sharing of ideas.
+    </p>
+  </div>
+  <div id="contact"
+       class="col">
+    <h1>Contact</h1>
+  
+    <form id="contactForm"
+          class="col"
+          action="https://getsimpleform.com/messages?form_api_token=3a6e7824f48eaa9c18ca1ce253fa1bbb"
+          method="post">
+        <input type='hidden'
+               name='redirect_to'
+               value='http://jstruthers.github.io/thank-you' />
+
+        <input type='text'
+               class='contact-name'
+               name='fullname'
+               placeholder='Full Name...' />
+
+        <input type='email'
+               class='contact-email'
+               name='email'
+               placeholder='E-mail Address...' />
+
+        <textarea class='contact-message'
+                  name='message'
+                  rows='10'
+                  cols='40'></textarea>
+
+      <input class='contact-submit'
+             type='submit'
+             value='Send Message' />
+    </form>
+    
+  </div>
 </div>

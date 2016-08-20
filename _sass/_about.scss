@@ -1,20 +1,80 @@
+#bio .col {
+  width: 50%;
+  align-items: flex-start;
+}
+
+#about {
+  padding-right: 20px;
+  border-right: 2px solid $text-color;
+}
+
 #about h1 {
   margin-left: 50px;
 }
 
 #headShot {
   float: left;
-  margin-right: 40px;
   width: 177px;
   height: 200px;
-  border-radius: 50%;
+  margin-right: 20px;
+  
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px;
 }
 
 #about p {
-  text-indent: 40px;
   font-size: 0.9em;
+  padding-bottom: 40px;
 }
 
-#about p::first-line {
-  font-size: 1.4em;
+/***********************
+    FORM
+***********************/
+
+#contact {
+  align-self: flex-start;
+  margin-left: 20px;
+}
+
+#contactForm {
+  align-items: flex-start;
+}
+
+.contact-name,
+.contact-email,
+.contact-message {
+  margin-bottom: 5px;
+  padding: 5px;
+  font: 1rem Courier, sans-serif;;
+  border: none;
+  box-shadow: 2px 2px 5px;
+}
+
+.contact-name,
+.contact-email {
+  height: 20px;
+  width: 300px;
+}
+
+.contact-message {
+  resize: none;
+}
+
+.contact-submit {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  position: relative;
+  
+  padding: 5px;
+  margin-top: 15px;
+  background-color: $color-1;
+  font: 1.2rem Courier, sans-serif;
+}
+
+.contact-submit:hover {
+  background-color: steelblue;
+  cursor: pointer;
+  left: 2px;
+  top: 2px;
 }

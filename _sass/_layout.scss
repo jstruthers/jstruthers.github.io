@@ -27,6 +27,7 @@
 .site-header {
     border-bottom: 1px solid $grey-color-light;
     min-height: 56px;
+    z-index: 2;
 
     // Positioning context for the mobile navigation icon
     position: relative;
@@ -128,6 +129,7 @@
     border-top: 1px solid $grey-color-light;
     padding: $spacing-unit 0;
     font-weight: 100;
+    z-index: 2;
 }
 
 .footer-heading {
