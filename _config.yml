@@ -3,10 +3,10 @@
 
 # Site settings
 title: Jackson Struthers
-email: jacksonstruthers@gmail.com
+email: jackson@jstruthers.com
 description: Web Design Portfolio 2016
 baseurl: "" # the subpath of your site, e.g. /blog
-url: "https://jstruthers.github.io" # the base hostname & protocol for your site
+url: "jstruthers.com" # the base hostname & protocol for your site
 
 github:  jstruthers
 linkedin: https://no.linkedin.com/in/jackson-struthers
@@ -23,8 +23,11 @@ katex: # enable if using math markup
 
 # Collections
 collections:
-- projects
-- case-studies
+  projects:
+    output: false
+  case-studies:
+    output: true
+    permalink: /case-studies/:path/
 
 # Build settings
 markdown: kramdown

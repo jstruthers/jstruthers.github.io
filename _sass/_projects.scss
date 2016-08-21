@@ -12,7 +12,7 @@
   white-space: nowrap;
   background-color: $color-2;
   width: 100%;
-  height: 320px;
+  height: 260px;
   padding: 20px 0;
   overflow-x: scroll;
   margin-top: 340px;
@@ -59,9 +59,9 @@
   height: 250px;
   margin: 0 10px;
   
-  border: 30px solid tomato;
+  border: 3px solid #333;
   border-radius: 50%;
-  transition: border-color 0.25s ease-in-out
+  transition: all 0.25s ease-in-out
 }
 
 .project-menu-icon:hover, .project-menu-icon h1:hover {
@@ -75,7 +75,7 @@
 
 #shadowTop, #shadowBot {
   z-index: 3;
-  height: 20px;
+  height: 10px;
   width: 100vw;
   position: absolute;
   transition: all 0.4s ease-out;
@@ -83,18 +83,18 @@
 
 #shadowTop {
   top: 56px;
-  background: -webkit-linear-gradient(rgba(0,0,0,1) 2%,rgba(16,25,31,0.2) 5%, rgba(255,255,255,0) 100%);
-  background: -o-linear-gradient(rgba(0,0,0,1) 2%,rgba(16,25,31,0.2) 5%, rgba(255,255,255,0) 100%);
-  background: linear-gradient(rgba(0,0,0,1) 2%,rgba(16,25,31,0.2) 5%, rgba(255,255,255,0) 100%);
+  background: -webkit-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0));
+  background: -o-linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0));
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(255,255,255,0));
   /* IE */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 );
 }
 
 #shadowBot {
-  top: 376px;
-  background: -webkit-linear-gradient(rgba(255,255,255,0) 0%,rgba(16,25,31,0.2) 95%, rgba(0,0,0,1) 98%);
-  background: -o-linear-gradient(rgba(255,255,255,0) 0%,rgba(16,25,31,0.2) 95%, rgba(0,0,0,1) 98%);
-  background: linear-gradient(rgba(255,255,255,0) 0%,rgba(16,25,31,0.2) 95%, rgba(0,0,0,1) 98%);
+  top: 386px;
+  background: -webkit-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.5));
+  background: -o-linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.5));
+  background: linear-gradient(rgba(255,255,255,0), rgba(0,0,0,0.5));
   /* IE */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#00ffffff',GradientType=0 );
 }
@@ -103,19 +103,9 @@
     blocChat
 ******************/
 
-#blocChatMenuIcon {
-  border: 30px solid rebeccapurple;
-}
-
-#blocChatMenuIcon:hover {
-  border: 30px solid cyan; 
-}
-
+#blocChatView,
+#blocChatMenuIcon:hover,
 #blocChatMenuIcon.selected-project {
-  background-color: cyan;
-}
-
-#blocChatView {
   background-color: rebeccapurple;
   color: $color-2;
 }
@@ -124,37 +114,26 @@
     blocJams
 ******************/
 
-#blocJamsMenuIcon {
-  border: 30px solid #333;
-}
-
-#blocJamsMenuIcon:hover {
-  border: 30px solid deeppink; 
-}
-
+#blocJamsView,
+#blocJamsMenuIcon:hover,
 #blocJamsMenuIcon.selected-project {
-  background-color: deeppink;
+  background-color: #333;
+  color: $color-2;
 }
 
 #blocJamsView {
   background-color: #333;
-  color: $color-2;
 }
 
 /******************
     blocPong
 ******************/
 
-#blocPongMenuIcon {
-  border: 30px solid turquoise;
-}
-
-#blocPongMenuIcon:hover {
-  border: 30px solid steelblue; 
-}
-
+#blocPongView,
+#blocPongMenuIcon:hover,
 #blocPongMenuIcon.selected-project {
-  background-color: steelblue;
+  background-color: turquoise;
+  color: $color-2;
 }
 
 #blocPongView {
@@ -169,16 +148,11 @@
     blocTime
 ******************/
 
-#blocTimeMenuIcon {
-  border: 30px solid forestgreen;
-}
-
-#blocTimeMenuIcon:hover {
-  border: 30px solid tomato; 
-}
-
+#blocTimeView,
+#blocTimeMenuIcon:hover,
 #blocTimeMenuIcon.selected-project {
   background-color: tomato;
+  color: $color-2;
 }
 
 #blocTimeView {

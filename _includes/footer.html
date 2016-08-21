@@ -7,7 +7,7 @@
 
         <h2 class="footer-heading">{{ site.title }}</h2>
 
-        <ul class="social-media-list row">
+        <ul class="social-media-list">
           {% if site.github %}
           <li>
             <a href="{{ site.github }}"></a>
@@ -60,5 +60,13 @@
     </div>
 
   </div>
+  
+  <script>
+    {% include gifffer.js %}
+    
+    window.onload = function() {
+      Gifffer();
+    }
+  </script>
 
 </footer>

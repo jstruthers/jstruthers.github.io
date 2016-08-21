@@ -1,0 +1,46 @@
+.aside {
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.case-study-assets {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 120%;
+  left: -10%;
+  
+  .row {
+    margin-bottom: 20px;
+  }
+}
+
+.gifffer {
+  outline: none;
+}
+
+.gif-wrapper {
+  box-shadow: -4px 4px 6px #777;
+  
+  p {
+    margin: 0;
+    background-color: $color-2;
+  }
+}
+
+.caption {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+#blocChatConcept {
+  width: 800px;
+}
+
+#blocChatLogin {
+  width: 486px;
+}
+
+#blocChatCreateRoom {
+  width: 322px;
+}

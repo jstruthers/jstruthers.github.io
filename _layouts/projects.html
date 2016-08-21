@@ -22,7 +22,7 @@
               <h1>{{ project.title }}</h1>
               <p>{{ project.blurb }}</p>
               <p>You can view a case study of this project 
-                <a href="{{ site.url }}/case_studies/{{ project.title }}">here</a>
+                <a href="/case-studies/{{ project.title }}">here</a>
               </p>
               <a href="{{ project.projectUrl }}">Check it out =></a>
             </div>
@@ -34,7 +34,7 @@
       <div id="projects">
         {% for project in site.projects %}
           <div id="{{ project.title }}MenuIcon"
-               class="project-menu-icon"
+               class="project-menu-icon {{ project.firstInRow }}"
                onClick="showProject('{{ project.projNum }}')">
             <div class="flex-center">
               <h1>{{ project.title }}</h1>
@@ -49,7 +49,13 @@
     <script>
       function showProject(index) {
         index = parseInt(index)
-        var details = document.getElementById('projectDetails')
+        var details = document.getElementById('projectDetails'),
+            projList = [].slice.call(document.getElementById('projects').children)
+        
+        projList.forEach((proj, i) => {
+          if (i === index) { proj.classList.add('selected-project') }
+          else { proj.classList.remove('selected-project') }
+        })
         
         details.style.height = 340 * (index + 1) + 'px'
         details.style.top = -340 * index + 56 + 'px'
