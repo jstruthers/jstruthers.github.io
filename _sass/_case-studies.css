@@ -1,0 +1,50 @@
+.aside {
+  font-size: 0.9rem;
+  margin-left: 20px;
+}
+
+.case-study-assets {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90vw;
+  left: -30%;
+}
+
+.gifffer {
+  outline: none;
+}
+
+.gif-wrapper {
+  box-shadow: -4px 4px 6px #777;
+  
+  p {
+    margin: 0;
+  }
+}
+
+.caption {
+  font-size: 0.8rem;
+  padding: 5px;
+}
+
+#blocChatConcept,
+#blocChatLogin,
+#blocChatCreateRoom {
+  position: absolute;
+}
+
+#blocChatConcept {
+  top: 5px;
+  left: 30px;
+}
+
+#blocChatLogin {
+  top: 500px;
+  left: 100px;
+}
+
+#blocChatCreateRoom {
+  top: 550px;
+  left: 400px;
+}

@@ -23,8 +23,11 @@ katex: # enable if using math markup
 
 # Collections
 collections:
-- projects
-- case-studies
+  projects:
+    output: false
+  case-studies:
+    output: true
+    permalink: /case-studies/:path/
 
 # Build settings
 markdown: kramdown
