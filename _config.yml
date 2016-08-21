@@ -8,7 +8,7 @@ description: Web Design Portfolio 2016
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "jstruthers.com" # the base hostname & protocol for your site
 
-github:  jstruthers
+github: https://github.com/jstruthers
 linkedin: https://no.linkedin.com/in/jackson-struthers
 stack_exchange: http://stackexchange.com/users/8887101/jackson-struthers
 codepen: https://codepen.io/jStruthers/

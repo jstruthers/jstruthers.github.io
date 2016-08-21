@@ -43,7 +43,20 @@ workflow, so I figured this material would provide a good introduction.
 ---
 
 ## Solution
+The design and layout of this project posed the interesting problem of there being so little content.
+The idea is really better suited to a mobile app (which I hope to convert this to in the future!).
+I decided to design with this in mind, with the content sitting within a six hundred pixel width
+and laid out in a column.
 
+<div class="case-study-assets" markdown="1">
+
+  <div class="row center">
+    <img src="../../assets/blocTimeConcept.png"
+         alt="blocTime concept image"
+         id="blocTimeConcept" />
+  </div>
+
+</div>
 
 ---
 

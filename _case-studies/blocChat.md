@@ -72,11 +72,11 @@ The final interface replicates this fairly closely. I had thought of a lot more 
 <div class="case-study-assets"
      markdown="1">
 
-<div class="row center">
-<img src="../../assets/blocChatConcept.png"
-     alt="blocChat concept image"
-     id="blocChatConcept" />
-</div>
+  <div class="row center">
+    <img src="../../assets/blocChatConcept.png"
+         alt="blocChat concept image"
+         id="blocChatConcept" />
+  </div>
 
 </div>
 
@@ -99,9 +99,11 @@ The following line creates the collection:
 {% highlight javascript %}
 const Todos = new Mongo.Collection('todos');
 {% endhighlight %}
+
 <p class="aside" markdown="1">
 Specific queries to the database are then exposed to the client with a function defined like this:
 </p>
+
 {% highlight javascript %}
 export function createTodo(text) {
   return Todos.insert({
@@ -109,9 +111,11 @@ export function createTodo(text) {
   })
 }
 {% endhighlight %}
+
 <p class="aside" markdown="1">
 Now, in a `methods.js` file, at `/imports/api/methods.js`, Meteor can correspond with the Mongo database.
 </p>
+
 {% highlight javascript %}
 import Todos, { createTodo } from './collections/todos';
 
@@ -129,12 +133,14 @@ Meteor.methods({
   }
 };
 {% endhighlight %}
+
 <p class="aside" markdown="1">
 `Todos` is our collection object, and `{ createTodo }` is one of the queries that we defined.
 The `Meteor.methods({...` block defines the client facing api that can be used in our React components.<br/><br/>
 
 Alternatively, the sibling file `publications.js` can be used:
 </p>
+
 {% highlight javascript %}
 import Todos from './collections/todos';
 
@@ -142,6 +148,7 @@ Meteor.publish('allTodos', function() {
   return Todos.find({});
 });
 {% endhighlight %}
+
 <p class="aside" markdown="1">
 I used publications while working with
 Meteor's user-accounts add on, because of the way it programmatically generates a collection for users.
@@ -161,39 +168,41 @@ work together to send, store, and update chat and account information.
       markdown="1">
 
 <div class="row space">
-<div class="gif-wrapper"
-     id="blocChatCreateRoom">
-<img data-gifffer="../../assets/createRoom.gif"
-     data-gifffer-alt=".gif of user creating a room"
-     class="gifffer" />
-<p class="caption">
-  Chat rooms can only be deleted by the user that created them.
-</p>
-</div>
 
-<div class="gif-wrapper"
-     id="blocChatLogin">
-<img data-gifffer="../../assets/blocChatLogin.gif"
-     data-gifffer-alt=".gif of user creating an account"
-     class="gifffer" />
-<p class="caption">
-  User is logged in automatically after creating a new account.
-</p>
-</div>
+  <div class="gif-wrapper"
+       id="blocChatCreateRoom">
+    <img data-gifffer="../../assets/createRoom.gif"
+         data-gifffer-alt=".gif of user creating a room"
+         class="gifffer" />
+    <p class="caption">
+      Chat rooms can only be deleted by the user that created them.
+    </p>
+  </div>
+
+  <div class="gif-wrapper"
+       id="blocChatLogin">
+    <img data-gifffer="../../assets/blocChatLogin.gif"
+         data-gifffer-alt=".gif of user creating an account"
+         class="gifffer" />
+    <p class="caption">
+      User is logged in automatically after creating a new account.
+    </p>
+  </div>
+
 </div>
 
 <div class="row center">
-<div class="gif-wrapper"
-     id="blocChatLogin">
-<img data-gifffer="../../assets/sendMessage.gif"
-     class="gifffer"
-     data-gifffer-alt=".gif of user sending a message" />
-<p class="caption">
-  Each chat room keeps a `messageLog` <a href="https://docs.mongodb.com/manual/core/document/">Mongo document</a>
-  in the form of an array. Messages submitted in a chat room are stored in this array,
-  along with who wrote that message and when.
-</p>
-</div>
+  <div class="gif-wrapper"
+       id="blocChatLogin">
+    <img data-gifffer="../../assets/sendMessage.gif"
+         class="gifffer"
+         data-gifffer-alt=".gif of user sending a message" />
+    <p class="caption">
+      Each chat room keeps a `messageLog` <a href="https://docs.mongodb.com/manual/core/document/">Mongo document</a>
+      in the form of an array. Messages submitted in a chat room are stored in this array,
+      along with who wrote that message and when.
+    </p>
+  </div>
 </div>
 
 </div>
@@ -221,9 +230,9 @@ current user's status is shown in the upper left, along with a button for loggin
 browser to the initial log in screen.
 
 <div class="row center" markdown="1">
-<img src="../../assets/blocChatFinal.png"
-     alt="blocChat final layout"
-     id="blocChatFinal" />
+  <img src="../../assets/blocChatFinal.png"
+       alt="blocChat final layout"
+       id="blocChatFinal" />
 </div>
 
 Of course, chatting to myself was getting pretty tedious by now. What's a chat app worth without friends!
