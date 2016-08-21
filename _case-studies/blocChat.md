@@ -65,9 +65,30 @@ helpful, vocal community.
 
 ## Solution
 
+For the UI, the concept I sketched out featured a simple two column layout and a goofy lava-lamp theme.
+The final interface replicates this fairly closely. I had thought of a lot more animations and art assets
+(like the line drawn avatars seen to the left), but time constraints pushed these ideas out of the final project.
+
+<div class="case-study-assets"
+     markdown="1">
+
+<div class="row center">
+<img src="../../assets/blocChatConcept.png"
+     alt="blocChat concept image"
+     id="blocChatConcept" />
+</div>
+
+</div>
+
 As a jumping off point, I began this project by forking a [repository](https://github.com/jstruthers/react-redux-meteor)
 that a mentor of mine, [Jeff Lau](http://jefflau.net/#open), made. It helped me with the meshing Meteor's methods
-with Redux's actions. Here's an example from `/imports/api/`:
+with Redux's actions.
+
+Apart from the user interface, figuring out this API was the most difficult part of the project. The queries
+themselves must be written in Mongo's BSON syntax, and coordinating the Meteor methods with actions required
+a clear understanding of call back functions.  
+
+Here's an example from `/imports/api/`:  
 
 <p class="aside" markdown="1">
 There's a dedicated folder for `collections`, which are like Mongo's version of a table in standard SQL.
@@ -126,46 +147,104 @@ I used publications while working with
 Meteor's user-accounts add on, because of the way it programmatically generates a collection for users.
 </p>
 
-Apart from the user interface, figuring out this API was the most difficult part of the project. The queries
-themselves must be written in Mongo's BSON syntax, and coordinating the Meteor methods with actions required
-a clear understanding of call back functions.
+These methods and publications are triggered when one of the forms is submitted. The data is taken from the
+input field and formatted as a database query, then stored in a 'mini-mongo' client-side database. This
+allows the client to continue running up to speed, while potentially large volumes of data are asynchronously
+sent to the server.
 
-For the UI, the concept I sketched out featured a simple two column layout and a goofy lava-lamp theme.
-The final interface replicates this fairly closely. I had thought of a lot more animations and art assets
-(like the line drawn avatars seen to the left), but time constraints pushed these ideas out of the final project.
+Below are a few examples of these forms in action. React, Redux, Meteor, along with three smaller libraries,
+[React-Router](https://github.com/reactjs/react-router), [Redux Form](https://github.com/erikras/redux-form), 
+and Meteor's [accounts-password](https://atmospherejs.com/meteor/accounts-password),
+work together to send, store, and update chat and account information.
 
 <div class="case-study-assets"
-     markdown="1">
-<img src="../../assets/blocChatConcept.png"
-     alt="blocChat concept image"
-     id="blocChatConcept" />
+      markdown="1">
 
-<div class="gif-wrapper"
-     id="blocChatLogin">
-<img data-gifffer="../../assets/blocChatLogin.gif"
-     data-gifffer-alt="blocChat login gif"
-     class="gifffer" />
-<p class="caption">
-  User is logged in automatically after creating a new account.
-</p>
-</div>
-
+<div class="row space">
 <div class="gif-wrapper"
      id="blocChatCreateRoom">
 <img data-gifffer="../../assets/createRoom.gif"
-     data-gifffer-alt="blocChat create room gif"
+     data-gifffer-alt=".gif of user creating a room"
      class="gifffer" />
 <p class="caption">
   Chat rooms can only be deleted by the user that created them.
 </p>
 </div>
+
+<div class="gif-wrapper"
+     id="blocChatLogin">
+<img data-gifffer="../../assets/blocChatLogin.gif"
+     data-gifffer-alt=".gif of user creating an account"
+     class="gifffer" />
+<p class="caption">
+  User is logged in automatically after creating a new account.
+</p>
 </div>
+</div>
+
+<div class="row center">
+<div class="gif-wrapper"
+     id="blocChatLogin">
+<img data-gifffer="../../assets/sendMessage.gif"
+     class="gifffer"
+     data-gifffer-alt=".gif of user sending a message" />
+<p class="caption">
+  Each chat room keeps a `messageLog` <a href="https://docs.mongodb.com/manual/core/document/">Mongo document</a>
+  in the form of an array. Messages submitted in a chat room are stored in this array,
+  along with who wrote that message and when.
+</p>
+</div>
+</div>
+
+</div>
+
+Redux Form was a breeze to work with, as it exposed numerous conditional checks for validating a form,
+such as whether the user has begun typing and but then un-focused the field,
+or failed some custom error check that you've defined yourself. These exposed 'conditional hooks'
+help you as the developer manage state in various React components.  
+
+You can see an example of this above, where a new user is created. When trying to log in, a red error message
+is displayed briefly. This is because the user clicked in the `input name field` and then tabs down to the
+`input password field` without filling anything in for a username.
+
+Further checks can be made to validate the strings received at the `methods.js` file. The `user-accounts` add on
+uses encryption when working with the password field, so if the database were compromised in any way, the strings
+would appear to be gibberish.
 
 ---
 
 ## Results
 
+After getting the functionality in place, I translated the assets I had created in my mock up to html and css.
+You can see that the layout is almost the same, minus some of the graphics. One addition is that the
+current user's status is shown in the upper left, along with a button for logging out. This will re-route the
+browser to the initial log in screen.
+
+<div class="row center" markdown="1">
+<img src="../../assets/blocChatFinal.png"
+     alt="blocChat final layout"
+     id="blocChatFinal" />
+</div>
+
+Of course, chatting to myself was getting pretty tedious by now. What's a chat app worth without friends!
+To make this last jump, I deployed this Meteor app to [Heroku](www.heroku.com) by way of the
+[Meteor Buildpack Horse](https://github.com/AdmitHub/meteor-buildpack-horse). And just like that, blocChat
+was connecting people world wide! Or at least appartment wide, as it stands now.
+
+You can check it out for yourself [here](https://jsbloc-chat.herokuapp.com)
 
 ---
 
 ## Conclusion
+
+This was my second project working with React and Redux, so I was starting to feel more comfortable with
+them as tools. I began to see how quickly they stream-line and organize a project.
+
+Jumping into Meteor was pretty daunting to begin with. But the amount of functionality offered out of the
+box more than compensated for the initial learning curve. I'm hoping it will be a gateway to learning
+more server side development skills, but for now, I'll definitely be giving it another shot in the future.
+
+This is a very skeletal app, and there's a ton of room for improvement. I would like to flesh out the
+user accounts system by adding the ability to promote users to administrators, make private chat rooms,
+and customize your presence in the chat room. Also, some kind of friend list system. I feel that
+with the system that's currently in place, it wouldn't take time at all to expand the app with new features.
