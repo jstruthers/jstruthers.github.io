@@ -157,15 +157,20 @@
 .social-media-list {
   align-items: center;
   font-size: 2rem;
-}
-
-.social-media-list li {
-  display: inline;
-  margin-left: 25px;
-}
-
-.social-media-list li:hover {
-  cursor: pointer;
+  
+  li {
+    display: inline;
+    margin-left: 25px;
+  }
+  
+  a {
+    color: $text-color;
+  }
+  
+  a:hover {
+    color: $brand-color;
+    text-decoration: none;
+  }
 }
 
 .footer-col-wrapper {
