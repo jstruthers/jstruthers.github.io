@@ -1,4 +1,5 @@
 ___
+layout: post
 title: What Do Vectors See?
 ___
 
