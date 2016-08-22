@@ -1,6 +1,6 @@
 ___
 layout: post
-title: "What Do Vectors See?"
+title: What Do Vectors See\?
 ___
 
 To me, computer graphics are pretty close to magic. From a you age I've been mesmerized by the wonders programmers
